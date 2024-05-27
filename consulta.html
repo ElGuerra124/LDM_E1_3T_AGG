@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVIDENCIA 1 - ALBERTO GUERRA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta de Datos</h1>
+        <nav>
+            <ul>
+        <li><a href="consulta.html">Inicio</a></li>
+        <li><a href="grafica.html">Grafica Comercializadoras</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-cif" placeholder="Buscar por CIF">
+            <input type="text" id="search-nombre" placeholder="Buscar por Nombre">
+            <input type="text" id="search-comercializadora" placeholder="Buscar por Comercializadora">
+            <input type="text" id="search-estado" placeholder="Buscar por Estado">
+            <button onclick="searchData()">Buscar</button>
+        </div>
+        <div id="data-container"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Consulta de Datos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

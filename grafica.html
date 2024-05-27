@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gráficas sondeo de Datos</title>
+</head>
+<header>
+    <nav>
+        <ul>
+    <li><a href="consulta.html">Inicio</a></li>
+    <li><a href="grafica.html">Grafica Comercializadoras</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        const data = [
+            {
+                "CIF": "B0231535372",
+                "NOMBRE": "HERNANDEZ Y ATENCIA SL",
+                "CUPS": "ES002100000358263FN",
+                "TARIFA": "6.1TD",
+                "COMERCIALIZADORA": "EVOLVE",
+                "COMERCIAL": "FRAN VILLAROBLEDO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "SE LE HA HECHO CAMBIO DE POTENCIA",
+                "FECHA": "15-Nov"
+            },
+            {
+                "CIF": "B16993131",
+                "NOMBRE": "TE COMPRO Y PUNTO SL",
+                "CUPS": "ES0021000004888369LS",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "FIRMADO",
+                "FECHA": "21-Nov",
+                "PAGADO": 60,
+                "O 50%": 30
+            },
+            {
+                "CIF": "52760917K",
+                "NOMBRE": "MARIA DOLORES DOMINGUEZ",
+                "CUPS": "ES0021000000394104RL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "FRAN VILLAROBLEDO",
+                "ESTADO": "TRAMITADO",
+                "FECHA": "15-Nov",
+                "PAGADO": 35
+            },
+            {
+                "CIF": "52760917K",
+                "NOMBRE": "MARIA DOLORES DOMINGUEZ",
+                "CUPS": "ES0220040039750113KK",
+                "TARIFA": "RL1",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "FRAN VILLAROBLEDO",
+                "ESTADO": "TRAMITADO",
+                "FECHA": "15-Nov",
+                "PAGADO": 25
+            },
+            {
+                "CIF": "05247710F",
+                "NOMBRE": "ROCIO GONZALEZ DOS SANTOS",
+                "CUPS": "ES0315000011413712MD",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "CHUS",
+                "ESTADO": "TRAMITADO",
+                "FECHA": "15-Nov",
+                "PAGADO": 35
+            },
+            {
+                "CIF": "04854540E",
+                "NOMBRE": "RAUL BARDERA MARTIN",
+                "CUPS": "ES0021000001813732SH",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO"
+            },
+            {
+                "CIF": "B04979373",
+                "NOMBRE": "THINK ZERO SL",
+                "CUPS": "ES0021000019532063QT",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B88443080",
+                "NOMBRE": "BE BRAVE SL",
+                "CUPS": "ES0031104407910004DN",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "TARIFA": "20TD",
+                "COMERCIALIZADORA": "GANA ENERGIA",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "ACCIONES": "PAGADO"
+            },
+            {
+                "CIF": "B87622195",
+                "NOMBRE": "CAVEREL ASSETS SL",
+                "CUPS": "ES0021000011732140TK",
+                "TARIFA": "30TD",
+                "COMERCIALIZADORA": "EVOLVE",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "PAGADO": 525.87,
+                "O 50%": 262.93
+            },
+            {
+                "CIF": "B82419335",
+                "NOMBRE": "ROBLESFER SL",
+                "CUPS": "ES0021000022413423BN",
+                "TARIFA": "30TD",
+                "COMERCIALIZADORA": "EVOLVE",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "PAGADO": 654.31,
+                "O 50%": 327.15
+            },
+            {
+                "CIF": "B88134615",
+                "NOMBRE": "ROCKETFOOD SL",
+                "CUPS": "ES0021000039244351TT",
+                "TARIFA": "30TD",
+                "COMERCIALIZADORA": "EVOLVE",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "PAGADO": 503.73,
+                "O 50%": 251.86
+            },
+            {
+                "CIF": "B80149986",
+                "NOMBRE": "CASTELLANA GOLF ",
+                "CUPS": "ES0021000020399272TV",
+                "TARIFA": "30TD",
+                "COMERCIALIZADORA": "EVOLVE",
+                "COMERCIAL": "LUBO",
+                "ESTADO": "TRAMITADO",
+                "PAGADO": 403.35,
+                "O 50%": 201.68
+            }
+        ];
+      
+        const comercializadoraCount = data.reduce((acc, item) => {
+            acc[item.COMERCIALIZADORA] = (acc[item.COMERCIALIZADORA] || 0) + 1;
+            return acc;
+        }, {});
+      
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(comercializadoraCount),
+            datasets: [{
+              label: 'Comercializadoras más usadas',
+              data: Object.values(comercializadoraCount),
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Comercializadoras más usadas'
+              }
+            }
+          }
+        });
+    </script>
+</body>
+</html>
+
